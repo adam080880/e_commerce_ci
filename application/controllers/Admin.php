@@ -15,9 +15,8 @@
             $this->load->view('admin/index');
 
             $this->load->view('admin/layout/footer_theme', [
-                'java' => [
-                    "http://" . $_SERVER['HTTP_HOST'] . '/assets/page/admin.js',
-                    "http://" . $_SERVER['HTTP_HOST'] . '/assets/page/kate.js',
+                'java' => [                    
+                    base_url() . "assets/page/barang.js",
                 ]
             ]);
         }

@@ -8,10 +8,10 @@
     <title>Flame Store | <?= $title ?></title>
 
     <link href="https://fonts.googleapis.com/css?family=Lobster|PT+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="<?= "http://" . $_SERVER['HTTP_HOST'] . "/e_commerce/" ?>assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="<?= "http://" . $_SERVER['HTTP_HOST'] . "/e_commerce/" ?>assets/icon/css/all.css">
+    <link rel="stylesheet" href="<?= base_url() ?>assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?= base_url() ?>assets/icon/css/all.css">
 
-    <link rel="stylesheet" href="<?= "http://" . $_SERVER['HTTP_HOST'] . "/e_commerce/" ?>assets/my.css">
+    <link rel="stylesheet" href="<?= base_url() ?>assets/my.css">
 </head>
 
 <body class='bg-light'>

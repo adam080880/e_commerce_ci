@@ -27,7 +27,7 @@ class Welcome extends CI_Controller {
 		$this->load->view('customer/landing_page');
 		$this->load->view('customer/layout/footer', [
 			'js' => [
-				'assets/page/landing_page.js'
+				base_url() . 'assets/page/landing_page.js'
 			]
 		]);
 	}
