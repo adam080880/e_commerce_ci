@@ -1,0 +1,75 @@
+:root {
+    --obsidian: #213358;  
+    --white: rgb(255, 255, 255);  
+}
+
+.font-sidebar-nav-my {
+    font-family: 'Lobster', cursive;
+    letter-spacing: 2px;
+    margin-left: 5px;
+    font-weight: lighter;
+    color: var(--obsidian);
+}
+
+.bg-danger-sidebar {
+    background: linear-gradient(38deg, rgb(255, 112, 29) 16%, rgba(253, 152, 89, 0.904) 97%);
+}
+
+.bg-danger-sidebar-a {
+    background: linear-gradient(45deg, rgb(255, 112, 29) 16%, rgba(253, 152, 89, 0.904) 97%);
+}
+
+.sidebar-group-p {
+    color: rgb(255, 112, 29);
+}
+
+.text-secondary-sidebar {
+    color: #7a6e5e;
+    cursor: pointer;
+}
+
+.text-secondary-table {
+    color: #7a6e5e;    
+}
+
+.text-secondary-sidebar:hover {
+    color: rgb(255, 112, 29);
+}
+
+.sidebar-my {
+    color:var(--obsidian);
+}
+
+.bg-dark-obsidian {
+    background-color: var(--obsidian);
+}
+
+.bg-dark-white {
+    background-color: var(--white);
+}
+
+.bg-white-nav {
+    background-color: rgb(255, 255, 255);
+}
+
+.active-items-gs {
+    cursor: grabbing;
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
+}
+
+.items {
+    -moz-user-select: none; 
+     -ms-user-select: none; 
+  -khtml-user-select: none; 
+ -webkit-user-select: none; 
+ -webkit-touch-callout: none; 
+}
+
+.item {
+    cursor:pointer;
+}
+
+.item:hover span {
+    color: rgb(255, 112, 29);
+}
