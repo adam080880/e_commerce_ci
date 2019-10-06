@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Dashboard - <?= $title ?></title>
 
-    <link href="https://fonts.googleapis.com/css?family=Lobster|PT+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald|Roboto&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="<?= base_url() ?>assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?= base_url() ?>assets/icon/css/all.css">
 
@@ -22,7 +22,7 @@
             <div style="width:13%;" class='shadow-sm'>
                 <!-- As a link -->
                 <nav class="navbar navbar-dark bg-danger-sidebar shadow-sm" style="min-height:70px">
-                    <a class="navbar-brand" href="#"><span style="font-family: 'Lobster'; letter-spacing:0.5px; font-size:23px"> Flame Store</span></a>
+                    <a class="navbar-brand" href="#"><span style="font-family: 'Oswald'; letter-spacing:0px; font-weight:600; font-size:23px"> Uncomfortable.</span></a>
                 </nav>
 
                 <!-- Sidebar component -->

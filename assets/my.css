@@ -4,7 +4,7 @@
 }
 
 .font-sidebar-nav-my {
-    font-family: 'Lobster', cursive;
+    font-family: 'Oswald', cursive;
     letter-spacing: 2px;
     margin-left: 5px;
     font-weight: lighter;
@@ -12,7 +12,11 @@
 }
 
 .bg-danger-sidebar {
-    background: linear-gradient(38deg, rgb(255, 112, 29) 16%, rgba(253, 152, 89, 0.904) 97%);
+    background: linear-gradient(to left bottom, rgb(255, 112, 29) 16%, rgba(253, 152, 89, 0.904) 97%);
+}
+
+.bg-main {
+    background: linear-gradient();
 }
 
 .bg-danger-sidebar-a {
@@ -72,4 +76,22 @@
 
 .item:hover span {
     color: rgb(255, 112, 29);
+}
+
+.opwh-1:hover {
+    opacity: 0.8;
+}
+
+.bw-20-white {
+    border-bottom:2px solid white;
+    width: 100px;
+}
+
+.bw-20-white-left {
+    border-left:1.5px solid white;
+    width: 100px;
+}
+
+.footer .head {
+    font-size: 18px;
 }

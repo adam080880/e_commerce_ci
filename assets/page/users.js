@@ -23,7 +23,7 @@ function init_table()
 }
 
 function checkVerified(_id) {
-    if(!confirm('yakin ingin konfirmasi user ini menjadi admin?')) {
+    if(!confirm('yakin ingin melakukan ini?')) {
         return ;
     }
 
