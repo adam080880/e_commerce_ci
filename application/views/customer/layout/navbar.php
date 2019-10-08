@@ -42,7 +42,7 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a href="" class="btn btn-outline-dark nav-link pl-4 pr-4 ml-2 wh-white">Login</a>
+                        <a href="./login" class="btn btn-outline-dark nav-link pl-4 pr-4 ml-2 wh-white">Login</a>
                     </li>
                     <!-- <li class="nav-item">
                         <div class="dropdown">

@@ -31,4 +31,18 @@ class Welcome extends CI_Controller {
 			]
 		]);
 	}
+
+	public function login()
+	{
+		$this->load->view('customer/layout/navbar', [
+			'title' => 'Index',
+			'recent_navbar' => 'Login',			
+		]);
+		$this->load->view('customer/login');
+		$this->load->view('customer/layout/footer', [
+			'java' => [
+				base_url() . 'assets/page/login.js'
+			]
+		]);
+	}
 }

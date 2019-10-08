@@ -62,6 +62,57 @@
             exit;
         }
 
+        public function register_client()
+        {
+            $this->form_validation->set_rules('username', 'Username', 'required|trim|is_unique[users.username]');
+            $this->form_validation->set_rules('password', 'Password', 'required|trim');
+            $this->form_validation->set_rules('email', 'Email', 'required|valid_email|trim|is_unique[users.email]');
+            
+            $res = [];
+
+            if(!$this->form_validation->run()) {
+                
+                $res = [
+                    'data' => [
+                        'username' => form_error('username'),
+                        'password' => form_error('password'),
+                        'email' => form_error('email'),
+                        'role' => 'customer'
+                    ],
+                    'res' => false,
+                    'status' => false
+                ];
+
+            } else {
+                $data = [
+                    'username' => $this->input->post('username'),
+                    'email' => $this->input->post('email'),
+                    'role' => 'customer',
+                    'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),                   
+                ];  
+                $data['token'] = password_hash($data['username'], PASSWORD_DEFAULT);                            
+    
+                $query = $this->Users_Model->register($data);
+    
+                if (!$query) {
+                    $res = [
+                        'data' => $data,
+                        'res' => $query,
+                        'status' => false
+                    ];
+                } else {
+                    $res = [
+                        'data' => $data,
+                        'res' => $query,
+                        'status' => true
+                    ];
+                }
+            }
+
+            echo json_encode($res);
+            exit;
+        }
+
         public function login() 
         {
             $data = [
