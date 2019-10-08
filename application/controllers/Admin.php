@@ -89,4 +89,19 @@
             ]);
         }
 
+        public function pengaturan() {
+            $this->load->view('admin/layout/header_theme', [
+                'title' => 'Pengaturan'
+            ]);
+            $this->load->view('admin/layout/sidebar_theme');
+
+            $this->load->view('admin/pengaturan');
+
+            $this->load->view('admin/layout/footer_theme', [
+                'java' => [
+                    base_url() . 'assets/page/pengaturan.js'
+                ]
+            ]);
+        }
+
     }

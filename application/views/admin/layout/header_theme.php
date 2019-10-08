@@ -30,22 +30,22 @@
                     <div class="group-sidebar mb-3">
                         <p class='nav-link mb-0 sidebar-group-p'><b> Dashboard</b></p>
                         <div class="ml-2">
-                            <a class="nav-link text-secondary-sidebar" href="<?= "http://".$_SERVER['HTTP_HOST']."/e_commerce/" ?>admin/barang"><img src="<?= "http://".$_SERVER['HTTP_HOST']."/e_commerce/" ?>assets/img/sidebar/barang.svg" alt="" width=25 height=25 class="d-inline-block align-top mr-2"> Barang</a>
-                            <a class="nav-link text-secondary-sidebar" href="<?= "http://".$_SERVER['HTTP_HOST']."/e_commerce/" ?>admin/promo"><img src="<?= "http://".$_SERVER['HTTP_HOST']."/e_commerce/" ?>assets/img/sidebar/discount.svg" alt="" width=25 height=25 class="d-inline-block align-top mr-2"> Promo</a>
-                            <a class="nav-link text-secondary-sidebar" href="<?= "http://".$_SERVER['HTTP_HOST']."/e_commerce/" ?>admin/users"><img src="<?= "http://".$_SERVER['HTTP_HOST']."/e_commerce/" ?>assets/img/sidebar/users.svg" alt="" width=25 height=25 class="d-inline-block align-top mr-2"> Users</a>
-                            <div style="display:none">Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"             title="Flaticon">www.flaticon.com</a></div>
+                            <a class="nav-link text-secondary-sidebar" href="<?= base_url() ?>admin/barang"><img src="<?= base_url() ?>assets/img/sidebar/barang.svg" alt="" width=25 height=25 class="d-inline-block align-top mr-2"> Barang</a>
+                            <a class="nav-link text-secondary-sidebar" href="<?= base_url() ?>admin/promo"><img src="<?= base_url() ?>assets/img/sidebar/discount.svg" alt="" width=25 height=25 class="d-inline-block align-top mr-2"> Promo</a>
+                            <a class="nav-link text-secondary-sidebar" href="<?= base_url() ?>admin/users"><img src="<?= base_url() ?>assets/img/sidebar/users.svg" alt="" width=25 height=25 class="d-inline-block align-top mr-2"> Users</a>
+                            <div style="display:none">Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
                         </div>
                     </div>
                     <div class="group-sidebar mb-3">
                         <p class='nav-link mb-0 sidebar-group-p'><b> Transaksi</b></p>
                         <div class="ml-2">
-                            <a class="nav-link active text-secondary-sidebar" href="<?= "http://".$_SERVER['HTTP_HOST']."/e_commerce/" ?>admin/riwayat"><img src="<?= "http://".$_SERVER['HTTP_HOST']."/e_commerce/" ?>assets/img/sidebar/penjualan.svg" alt="" width=25 height=25 class="d-inline-block align-top mr-2"> Riwayat</a>                        
+                            <a class="nav-link active text-secondary-sidebar" href="<?= base_url() ?>admin/riwayat"><img src="<?= base_url() ?>assets/img/sidebar/penjualan.svg" alt="" width=25 height=25 class="d-inline-block align-top mr-2"> Riwayat</a>                        
                         </div>
                     </div>
                     <div class="group-sidebar">
                         <p class='nav-link mb-0 sidebar-group-p'><b> Settings</b></p>
                         <div class="ml-2">
-                            <a class="nav-link active text-secondary-sidebar" href="#"><img src="<?= "http://".$_SERVER['HTTP_HOST']."/e_commerce/" ?>assets/img/sidebar/config.svg" alt="" width=25 height=25 class="d-inline-block align-top mr-2"> Pengaturan</a>                        
+                            <a class="nav-link active text-secondary-sidebar" href="<?= base_url() ?>admin/pengaturan"><img src="<?= base_url() ?>assets/img/sidebar/config.svg" alt="" width=25 height=25 class="d-inline-block align-top mr-2"> Pengaturan</a>                        
                         </div>                        
                     </div>
                 </nav>
