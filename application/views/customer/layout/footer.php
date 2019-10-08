@@ -6,7 +6,7 @@
                 </div>
                 <div class="col-lg-6 mb-4">
                     <p class="head mb-2">About Us</p>                   
-                    <p class="text-white" style="font-size:15px">
+                    <p class="text-white">
                         Kami datang untuk membuat anda tidak nyaman. Kamu harus beli sandang di sini jika kamu adalah orang yang penuh dengan kenyamanan
                     </p>
                 </div>
