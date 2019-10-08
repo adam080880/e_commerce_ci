@@ -95,3 +95,11 @@
 .footer .head {
     font-size: 18px;
 }
+
+.wh-white:hover {
+    color:white !important;
+}
+
+.wh-white:focus {
+    color:white !important;
+}

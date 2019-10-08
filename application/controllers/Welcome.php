@@ -22,14 +22,13 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('customer/layout/navbar', [
 			'title' => 'Index',
-			'recent_navbar' => 'Home',
-			'java' => [
-				base_url() . 'assets/page/landing_page.js'
-			]
+			'recent_navbar' => 'Home',			
 		]);
 		$this->load->view('customer/landing_page');
 		$this->load->view('customer/layout/footer', [
-			
+			'java' => [
+				base_url() . 'assets/page/landing_page.js'
+			]
 		]);
 	}
 }
