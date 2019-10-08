@@ -27,12 +27,24 @@
                         <a href="" class="nav-link">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a href="" class="nav-link">Categories</a>
+                        <a href="" class="nav-link">Pricing</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Category
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">All Category</a>
+                            <div class="dropdown-divider"></div>
+                            <div id="resCate">
+                                
+                            </div>
+                        </div>
                     </li>
                     <li class="nav-item">
                         <a href="" class="btn btn-outline-dark nav-link pl-4 pr-4 ml-2 wh-white">Login</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <div class="dropdown">
                             <button class="nav-link btn btn-outline-dark pl-4 pr-4 ml-2 wh-white dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Client
@@ -42,7 +54,7 @@
                                 <a class="dropdown-item" href="./logout">Logout</a>
                             </div>
                         </div>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
         </div>
