@@ -16,12 +16,14 @@
 
 <body class='bg-light'>
 
-    <nav class="navbar navbar-light bg-white shadow-sm">
+    <nav class="navbar navbar-light navbar-expand-lg bg-white shadow-sm">
 
         <div class="container">
-            <a href="./" class="navbar-brand" style="font-family: 'Oswald'; letter-spacing:0px; font-size:23px; font-weight:600;">Uncomfortable.</a>
-
-            <div class="navbar-expand-lg">
+            <a href="" class="navbar-brand" style="font-family: 'Oswald'; letter-spacing:0px; font-size:23px; font-weight:600;">Uncomfortable.</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarM" aria-controls="navbarM" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarM">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
                         <a href="./" class="nav-link">Home</a>
@@ -37,7 +39,7 @@
                             <a class="dropdown-item" href="#">All Category</a>
                             <div class="dropdown-divider"></div>
                             <div id="resCate">
-                                
+
                             </div>
                         </div>
                     </li>
