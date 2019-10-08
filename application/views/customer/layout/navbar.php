@@ -19,12 +19,12 @@
     <nav class="navbar navbar-light bg-white shadow-sm">
 
         <div class="container">
-            <a href="" class="navbar-brand" style="font-family: 'Oswald'; letter-spacing:0px; font-size:23px; font-weight:600;">Uncomfortable.</a>
+            <a href="./" class="navbar-brand" style="font-family: 'Oswald'; letter-spacing:0px; font-size:23px; font-weight:600;">Uncomfortable.</a>
 
             <div class="navbar-expand-lg">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a href="" class="nav-link">Home</a>
+                        <a href="./" class="nav-link">Home</a>
                     </li>
                     <li class="nav-item">
                         <a href="" class="nav-link">Pricing</a>
