@@ -6,12 +6,16 @@
                     <form action="" method="post" class="w-50 w-100-md m-auto pt-5 pb-5">
 
                         <div class="form-group mb-4">
-                            <label for="" class="label-control">Username</label>
+                            <label for="" class="label-control text-dark"><b>LOG IN</b></label>
+                        </div>
+
+                        <div class="form-group mb-4">
+                            <label for="username" class="label-control">Username</label>
                             <input type="text" name="username" id="username" class="form-control">
                         </div>
 
                         <div class="form-group mb-4">
-                            <label for="" class="label-control">Password</label>
+                            <label for="password" class="label-control">Password</label>
                             <input type="password" name="password" id="password" class="form-control">
                         </div>
 
