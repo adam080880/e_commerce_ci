@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col p-5">
                 <div class="card m-auto p-3">
-                    <form action="" method="post" class="w-50 w-100-md m-auto pt-5 pb-5">
+                    <form action="" method="post" id="login" class="w-50 w-100-md m-auto pt-5 pb-5">
 
                         <div class="form-group mb-4">
                             <label for="" class="label-control text-dark"><b>LOG IN</b></label>

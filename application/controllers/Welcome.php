@@ -41,7 +41,7 @@ class Welcome extends CI_Controller {
 		$this->load->view('customer/login');
 		$this->load->view('customer/layout/footer', [
 			'java' => [
-				base_url() . 'assets/page/login.js'
+				base_url() . 'assets/page/login_customer.js'
 			]
 		]);
 	}
