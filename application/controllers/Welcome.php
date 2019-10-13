@@ -45,4 +45,18 @@ class Welcome extends CI_Controller {
 			]
 		]);
 	}
+
+	public function register()
+	{
+		$this->load->view('customer/layout/navbar', [
+			'title' => 'Index',
+			'recent_navbar' => 'register',			
+		]);
+		$this->load->view('customer/register');
+		$this->load->view('customer/layout/footer', [
+			'java' => [
+				base_url() . 'assets/page/register_customer.js'
+			]
+		]);
+	}
 }
