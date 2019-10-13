@@ -43,10 +43,10 @@
                             </div>
                         </div>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item" id="btnLogin">
                         <a href="./login" class="btn btn-outline-dark nav-link pl-4 pr-4 ml-2 wh-white">Login</a>
-                    </li>
-                    <!-- <li class="nav-item">
+                    </li>   
+                    <li class="nav-item" id="btnLogined">
                         <div class="dropdown">
                             <button class="nav-link btn btn-outline-dark pl-4 pr-4 ml-2 wh-white dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Client
@@ -56,7 +56,7 @@
                                 <a class="dropdown-item" href="./logout">Logout</a>
                             </div>
                         </div>
-                    </li> -->
+                    </li>                 
                 </ul>
             </div>
         </div>

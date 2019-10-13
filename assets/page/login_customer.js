@@ -19,7 +19,7 @@ $(document).ready((e) => {
         $.ajax({
             url: URL + "api/users/login",
             data: {
-                username: $("#username").val(),
+                username: $("#username").val(), 
                 password: $("#password").val()
             },
             type: "POST",
