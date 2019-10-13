@@ -28,6 +28,7 @@ $(document).ready((e) => {
                     alert('Login Galat!!, User tak valid')
                 } else {
                     alert('Login Berhasil!!')
+                    window.localStorage.setItem('username', $('#username').val())
                     window.localStorage.setItem('token', e.data.token)
                     window.localStorage.setItem('role', e.data.role)                    
                     document.location.href= URL

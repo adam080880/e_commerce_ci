@@ -23,5 +23,6 @@ if (window.location.pathname == "/e_commerce/login" || window.location.pathname 
 
     $("#btnLogin").hide()
     $("#btnLogined").show()
+    $("#dropdownMenuButton").html(window.localStorage.getItem('username'))
 }
 

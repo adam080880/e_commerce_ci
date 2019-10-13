@@ -48,8 +48,8 @@
                     </li>   
                     <li class="nav-item" id="btnLogined">
                         <div class="dropdown">
-                            <button class="nav-link btn btn-outline-dark pl-4 pr-4 ml-2 wh-white dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Client
+                            <button class="nav-link btn btn-outline-dark pl-4 pr-4 ml-2 wh-white dropdown-toggle username" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                 <a class="dropdown-item" href="./profile">Profile</a>                                
