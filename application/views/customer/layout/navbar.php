@@ -53,7 +53,7 @@
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                 <a class="dropdown-item" href="./profile">Profile</a>                                
-                                <a class="dropdown-item" href="./logout">Logout</a>
+                                <a class="dropdown-item" onclick="window.localStorage.removeItem('token'); window.localStorage.removeItem('role'); alert('Kamu logout'); document.location.href=''" href="javascript:;">Logout</a>
                             </div>
                         </div>
                     </li>                 
