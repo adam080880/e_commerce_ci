@@ -30,7 +30,7 @@ $(document).ready((e) => {
                     alert('Login Berhasil!!')
                     window.localStorage.setItem('token', e.data.token)
                     window.localStorage.setItem('role', e.data.role)                    
-                    document.location.href= URL + "admin"
+                    document.location.href= URL
                 }
             }
         })
