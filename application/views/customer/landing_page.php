@@ -1,4 +1,6 @@
-<div class="jumbotron mb-5" style="height:300px"></div>
+<div class="jumbotron mb-5">
+    <h1 class='text-center' style="font-weight:100">Selamat Berbelanja</h1>
+</div>
 
     <div class="container">
         <div class="row">
