@@ -8,6 +8,7 @@
                 <div class="card shadow-sm" style="border-radius:0; border:none">
                     <div class="card-header bg-white" style="height:50px; border:none">
                         <b>Item Top</b> 
+                        <hr>
                     </div>
                     <div class="card-body" style="height:250px">
                         <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
@@ -68,6 +69,7 @@
                 <div class="card shadow-sm" style="border-radius:0; border:none">
                     <div class="card-header bg-white" style="border:none">
                         <b>Item Terbaru</b> 
+                        <hr class='mb-0'>
                     </div>
                     <div class="card-body" style="border-radius:0">
                         <div class="row flex-nowrap active-items-gs" style="overflow-x:hidden" id="newest-item">
