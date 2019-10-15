@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4 mt-5">
-                <div class="card shadow-lg" style="border-radius:0; border:none">
+                <div class="card shadow-sm" style="border-radius:0; border:none">
                     <div class="card-header bg-white" style="height:50px; border:none">
                         <b>Item Top</b> 
                     </div>
@@ -34,7 +34,7 @@
                 </div>
             </div>
             <div class="col-md-8 mt-5">
-                <div id="carouselExampleIndicators" class="carousel shadow-sm slide shadow-lg" data-ride="carousel">
+                <div id="carouselExampleIndicators" class="carousel shadow-sm slide shadow-sm" data-ride="carousel">
                     <ol class="carousel-indicators">
                         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -65,7 +65,7 @@
 
         <div class="row mt-5">
             <div class="col">
-                <div class="card shadow-lg" style="border-radius:0; border:none">
+                <div class="card shadow-sm" style="border-radius:0; border:none">
                     <div class="card-header bg-white" style="border:none">
                         <b>Item Terbaru</b> 
                     </div>
