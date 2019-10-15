@@ -9,6 +9,14 @@
             return ($search == NULL) ? $this->db->get('barang')->result() : $this->db->get_where('barang', "nama LIKE '%$search%'")->result();
         }
 
+        public function getOrderByHarga() {
+            return $this->db->order_by('harga')->get('barang', 5)->result();
+        }
+
+        public function getBarangLimit15() {
+            return $this->db->order_by('created_at', 'desc')->get('barang', 15)->result();
+        }
+
         public function find($id) {
             $this->db->where('id', $id);
             return $this->db->get('barang')->result();

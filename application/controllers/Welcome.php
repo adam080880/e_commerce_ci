@@ -18,13 +18,26 @@ class Welcome extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+
+	public function __construct()
+	{
+		parent::__construct();
+
+		$this->load->model('Kategori_Model');
+		$this->load->model('Barang_Model');
+	}
+
 	public function index()
 	{
 		$this->load->view('customer/layout/navbar', [
 			'title' => 'Index',
-			'recent_navbar' => 'Home',			
+			'recent_navbar' => 'Home',	
+			'cate' => $this->Kategori_Model->get()	
 		]);
-		$this->load->view('customer/landing_page');
+		$this->load->view('customer/landing_page', [
+			'top_list' => $this->Barang_Model->getOrderByHarga(),
+			'newest_list' => $this->Barang_Model->getBarangLimit15(),
+		]);
 		$this->load->view('customer/layout/footer', [
 			'java' => [
 				base_url() . 'assets/page/landing_page.js'
@@ -36,7 +49,8 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('customer/layout/navbar', [
 			'title' => 'Index',
-			'recent_navbar' => 'Login',			
+			'recent_navbar' => 'Login',	
+			'cate' => $this->Kategori_Model->get()			
 		]);
 		$this->load->view('customer/login');
 		$this->load->view('customer/layout/footer', [
@@ -50,7 +64,8 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('customer/layout/navbar', [
 			'title' => 'Index',
-			'recent_navbar' => 'register',			
+			'recent_navbar' => 'register',	
+			'cate' => $this->Kategori_Model->get()			
 		]);
 		$this->load->view('customer/register');
 		$this->load->view('customer/layout/footer', [

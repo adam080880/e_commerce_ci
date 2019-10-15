@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="<?= base_url() ?>assets/icon/css/all.css">
 
     <link rel="stylesheet" href="<?= base_url() ?>assets/my.css">
+    <link rel="stylesheet" href="<?= base_url() ?>assets/plugins/initScrolling.css">
 </head>
 
 <body class='bg-light'>
@@ -36,27 +37,31 @@
                             Category
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">All Category</a>
+                            <a class="dropdown-item" href="<?= base_url() ?>categories">All Category</a>
                             <div class="dropdown-divider"></div>
                             <div id="resCate">
+                                <?php foreach ($cate as $kategori) : ?>
 
+                                    <a href="<?= base_url() ?>category/<?= $kategori->id ?>" class="dropdown-item"><?= $kategori->kategori ?></a>
+
+                                <?php endforeach; ?>
                             </div>
                         </div>
                     </li>
                     <li class="nav-item" id="btnLogin">
                         <a href="./login" class="btn btn-outline-dark nav-link pl-4 pr-4 ml-2 wh-white">Login</a>
-                    </li>   
+                    </li>
                     <li class="nav-item" id="btnLogined">
                         <div class="dropdown">
                             <button class="nav-link btn btn-outline-dark pl-4 pr-4 ml-2 wh-white dropdown-toggle username" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                
+
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="./profile">Profile</a>                                
+                                <a class="dropdown-item" href="./profile">Profile</a>
                                 <a class="dropdown-item" onclick="window.localStorage.removeItem('token'); window.localStorage.removeItem('role'); alert('Kamu logout'); document.location.href=''" href="javascript:;">Logout</a>
                             </div>
                         </div>
-                    </li>                 
+                    </li>
                 </ul>
             </div>
         </div>
