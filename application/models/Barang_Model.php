@@ -27,7 +27,8 @@
         }
 
         public function update($data) {
-            $this->db->set('nama', $data['nama']);            
+            $this->db->set('nama', $data['nama']);   
+            $this->db->set('tipe', $data['tipe']);
             $this->db->set('size', $data['size']);
             $this->db->set('harga', $data['harga']);
             $this->db->set('kategori_id', $data['kategori_id']);            
