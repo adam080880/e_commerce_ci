@@ -74,4 +74,21 @@ class Welcome extends CI_Controller {
 			]
 		]);
 	}
+
+	public function item($i)
+	{
+		$this->load->view('customer/layout/navbar', [
+			'title' => 'Index',
+			'recent_navbar' => 'item',	
+			'cate' => $this->Kategori_Model->get()			
+		]);
+		$this->load->view('customer/item', [
+			'item' => $this->Barang_Model->find($i)[0]
+		]);
+		$this->load->view('customer/layout/footer', [
+			'java' => [
+				base_url() . 'assets/page/item.js'
+			]
+		]);
+	}
 }
