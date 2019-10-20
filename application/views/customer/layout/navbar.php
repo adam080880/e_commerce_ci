@@ -13,6 +13,7 @@
 
     <link rel="stylesheet" href="<?= base_url() ?>assets/my.css">
     <link rel="stylesheet" href="<?= base_url() ?>assets/plugins/initScrolling.css">
+        
 </head>
 
 <body class='bg-light'>
@@ -57,7 +58,8 @@
 
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="./profile">Profile</a>
+                                <a class="dropdown-item" href="<?= base_url() ?>profile">Profile</a>
+                                <a href="<?= base_url() ?>cart" class="dropdown-item">Cart <span class="badge badge-dark" id="cartShow"></span></a>
                                 <a class="dropdown-item" onclick="window.localStorage.removeItem('token'); window.localStorage.removeItem('role'); alert('Kamu logout'); document.location.href=''" href="javascript:;">Logout</a>
                             </div>
                         </div>

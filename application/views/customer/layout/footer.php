@@ -42,6 +42,11 @@
         </div>
     </div>
 
+    <script type="module" src="<?= base_url() ?>assets/plugins/CookiesManipulation.js"></script>
+    <script type="module">
+        import { CookiesManipulation } from "<?= base_url() ?>assets/plugins/CookiesManipulation.js";
+        window.CookiesManipulation = new CookiesManipulation;
+    </script>
     <script src="<?= base_url() ?>assets/plugins/grabScrolling.js"></script>
     <script src="<?= base_url() ?>assets/jquery.min.js"></script>
     <script src="<?= base_url() ?>assets/popper.min.js"></script>
