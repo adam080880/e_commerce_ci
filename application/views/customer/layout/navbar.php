@@ -57,7 +57,8 @@
 
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="./profile">Profile</a>
+                                <a class="dropdown-item" href="<?= base_url() ?>profile">Profile</a>
+                                <a href="<?= base_url() ?>cart" class="dropdown-item">Cart <span class="badge badge-dark" id="count-cart"></span></a>
                                 <a class="dropdown-item" onclick="window.localStorage.removeItem('token'); window.localStorage.removeItem('role'); alert('Kamu logout'); document.location.href=''" href="javascript:;">Logout</a>
                             </div>
                         </div>
