@@ -21,17 +21,17 @@
     <nav class="navbar navbar-light navbar-expand-lg bg-white shadow-sm">
 
         <div class="container">
-            <a href="./" class="navbar-brand" style="font-family: 'Oswald'; letter-spacing:0px; font-size:23px; font-weight:600;">Uncomfortable.</a>
+            <a href="<?= base_url() ?>" class="navbar-brand" style="font-family: 'Oswald'; letter-spacing:0px; font-size:23px; font-weight:600;">Uncomfortable.</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarM" aria-controls="navbarM" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarM">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a href="./" class="nav-link">Home</a>
+                        <a href="<?= base_url() ?>" class="nav-link">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a href="" class="nav-link">Pricing</a>
+                        <a href="<?= base_url() ?>" class="nav-link">Pricing</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -50,7 +50,7 @@
                         </div>
                     </li>
                     <li class="nav-item" id="btnLogin">
-                        <a href="./login" class="btn btn-outline-dark nav-link pl-4 pr-4 ml-2 wh-white">Login</a>
+                        <a href="<?= base_url() ?>login" class="btn btn-outline-dark nav-link pl-4 pr-4 ml-2 wh-white">Login</a>
                     </li>
                     <li class="nav-item" id="btnLogined">
                         <div class="dropdown">
@@ -59,7 +59,7 @@
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                 <a class="dropdown-item" href="<?= base_url() ?>profile">Profile</a>
-                                <a href="<?= base_url() ?>cart" class="dropdown-item">Cart <span class="badge badge-dark" id="cartShow"></span></a>
+                                <a href="<?= base_url() ?>cart" class="dropdown-item">Cart <span class="badge badge-dark" id="count-cart"></span></a>
                                 <a class="dropdown-item" onclick="window.localStorage.removeItem('token'); window.localStorage.removeItem('role'); alert('Kamu logout'); document.location.href=''" href="javascript:;">Logout</a>
                             </div>
                         </div>

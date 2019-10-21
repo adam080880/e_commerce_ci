@@ -1,8 +1,9 @@
 <?php
     defined('BASEPATH') or exit("no script allowed");
 
-    class Barang extends CI_Controller {
+    class Client extends CI_Controller {
 
+        private $user_data;
         public function __construct()
         {
             parent::__construct();
@@ -20,22 +21,25 @@
                     echo json_encode([
                         'message' => 'Token is not valid'
                     ]); exit;
-                }
+                }                
 
-                if($valid->role == 'admin' || $valid->verified == NULL) {
+                if($valid->role == 'admin') {
                     echo json_encode([
                         'message' => 'Role anda tak memenuhi syarat'
                     ]); exit;
                 }
 
+                $this->user_data = $valid;
+
             }
 
-            $this->load->model('Barang_Model');
+            $this->load->model('Cart_Model');
         }
 
-        public function get() {
-            $data = $this->Barang_Model->get();
-
-            echo json_encode($data); exit;
+        public function getCart()
+        {
+            echo json_encode($this->Cart_Model->getUser($this->user_data->id));exit;
         }
+
     }
+?>

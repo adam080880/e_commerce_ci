@@ -24,5 +24,12 @@ if (window.location.pathname == "/e_commerce/login" || window.location.pathname 
     $("#btnLogin").hide()
     $("#btnLogined").show()
     $("#dropdownMenuButton").html(window.localStorage.getItem('username'))
+    $.ajax({
+        url: laman + "api/client/getcart" + "?token=" +window.localStorage.getItem('token'),
+        type: "GET",
+        success: (e) => {
+            $("#count-cart").html(e.length)
+        }
+    })
 }
 
