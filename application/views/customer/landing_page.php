@@ -72,9 +72,9 @@
                         <hr class='mb-0'>
                     </div>
                     <div class="card-body" style="border-radius:0">
-                        <div class="row active-items-gs flex-nowrap p-2" style="overflow-x:hidden;" id="newest-item">
+                        <div class="active-items-gs p-2" style="white-space:nowrap; overflow-x:hidden;" id="newest-item">
                             <?php foreach($newest_list as $newest): ?>
-                                <div class="card col-sm-4 shadow-sm ml-1 mr-1">
+                                <div class="card col-sm-4 shadow-sm ml-1 mr-1" style="display:inline-block; white-space: nowrap">
                                     <div class="card-body">
                                         <b class="d-block"><a href="<?= base_url() ?>item/<?= $newest->id ?>" class="text-dark opwh-1"><?= $newest->nama ?></a></b>
                                         <small class="d-block">Rp. <?= $newest->harga ?>, 00</small>                                        

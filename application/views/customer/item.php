@@ -20,25 +20,28 @@
                         <span class="badge badge-pill badge-dark"><?= $roti ?></span>
 
                     <?php endforeach; ?>
-                </div>    
-                <div class="card-footer bg-white">                    
-                    <div class="row">    
-                        <div class="col-4">
-                            <p class='nav-link mb-0'>Stok: <?= $item->stok ?></p>
-                        </div>                
-                        <div class="col-6 pr-0">
-                            <div class="input-group w-50 ml-auto">
-                                <div class="input-group-prepend">
-                                    <div class="input-group-text"><b>+</b></div>
+                </div>   
+                <form action="" method="post" id="cart-form">
+                    <div class="card-footer bg-white">                    
+                        <div class="row">    
+                            <div class="col-4">
+                                <p class='nav-link mb-0'>Stok: <?= $item->stok ?></p>
+                            </div>                
+                            <div class="col-6 pr-0">
+                                <div class="input-group w-50 ml-auto">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text"><b>+</b></div>
+                                    </div>
+                                    <input min=0 max=<?= $item->stok ?> type="number" class="form-control" id="total" name="total">
                                 </div>
-                                <input min=0 max=<?= $item->stok ?> type="number" class="form-control" id="inlineFormInputGroup">
-                            </div>
-                        </div>                    
-                        <div class="col-2">
-                            <button class="btn btn-dark"><i class="fa fa-cart-plus"></i></button>
-                        </div>                        
-                    </div>
-                </div>            
+                            </div>                    
+                            <div class="col-2">
+                                <input type="hidden" name="barang_id" value="<?= $item->id ?>" id="barang_id">
+                                <button class="btn btn-dark" id="add-to-cart-btn" type="submit"><i class="fa fa-cart-plus"></i></button>
+                            </div>                        
+                        </div>
+                    </div>            
+                </form> 
             </div>
         </div>
     </div>

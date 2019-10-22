@@ -104,6 +104,10 @@
     color:white !important;
 }
 
+.not-u:hover {
+    text-decoration: none;
+}
+
 @media screen and (max-width: 992px) {
     .m-auto-md {        
         margin:auto !important;        
@@ -111,7 +115,7 @@
 
     .w-100-md {
         width: 100% !important;
-    }
+    }    
 }
 
 @media screen and (max-width: 768px) {
