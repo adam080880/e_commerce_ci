@@ -108,6 +108,14 @@
     text-decoration: none;
 }
 
+.swh-1:hover {
+    overflow-x: scroll;
+}
+
+.swh-1 {
+    overflow-x:hidden;
+}
+
 @media screen and (max-width: 992px) {
     .m-auto-md {        
         margin:auto !important;        
@@ -124,5 +132,9 @@
     }
     .w-100-md {
         width: 100% !important;
+    }
+
+    .swh-1 {
+        overflow-x:scroll;
     }
 }
