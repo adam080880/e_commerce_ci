@@ -33,6 +33,7 @@
             $this->db->set('harga', $data['harga']);
             $this->db->set('kategori_id', $data['kategori_id']);            
             $this->db->set('stok', $data['stok']);
+            if(isset($data['image_url'])) $this->db->set('image_url', $data['image_url']);
             $this->db->where('id', $data['id']);
 
             return $this->db->update('barang');

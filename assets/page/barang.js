@@ -10,7 +10,7 @@ function get_barang(_id_kategori) {
 
             let data = e;
             data.forEach((item, index) => {
-                _id_kategori.append("<div class='col-2'><div class='card shadow-sm item' onclick='showBarang("+item.id+")'><div class='card-body'></div><div class='card-footer bg-white'><span class='text-secondary-sidebar d-block'>" + item.nama + "</span><small class='small sidebar-group-p'>Rp. " + item.harga + "</small></div></div></div>")
+                _id_kategori.append("<div class='col-4'><div class='card shadow-sm item' onclick='showBarang("+item.id+")'><img class='card-img-top' style='width:100%; height:200px;' src='"+URL+"assets/img/item/"+item.image_url+"'/><div class='card-footer bg-white'><span class='text-secondary-sidebar d-block'>" + item.nama + "</span><small class='small sidebar-group-p'>Rp. " + item.harga + "</small></div></div></div>")
             })
 
             __init_scrolling(document.querySelector("#kategori" + _id_kategori.attr('data-t')))
@@ -146,19 +146,25 @@ $(document).ready((e) => {
 
     // Form barang tambah
     $("#fBarangTambah").submit((e) => {
-        e.preventDefault()
+        e.preventDefault()        
+
+        let fd = new FormData()
+        let files = $("#img_")[0].files[0]
+
+        fd.append('file', files)
+        fd.append('kategori_id', $("#id_b").val())
+        fd.append('nama', $("#namaBarang").val())
+        fd.append('tipe', $("#tipeBarang").val())
+        fd.append('size', $("#sizeBarang").val())
+        fd.append('harga', $("#hargaBarang").val())
+        fd.append('stok', $("#stokBarang").val())
 
         $.ajax({
             url: URL + "api/barang/post" + "?token=" + token,
             type: "POST",
-            data: {
-                kategori_id: $("#id_b").val(),
-                nama: $("#namaBarang").val(),
-                tipe: $("#tipeBarang").val(),
-                size: $("#sizeBarang").val(),
-                harga: $("#hargaBarang").val(),
-                stok: $("#stokBarang").val()
-            },
+            data: fd,
+            contentType: false,
+            processData: false,
             success: (e) => {                
                 __init_tampil()
 
@@ -172,18 +178,24 @@ $(document).ready((e) => {
     $("#fBarangEdit").submit((e) => {
         e.preventDefault()
 
+        let fd = new FormData()
+        let files = $("#img")[0].files[0]
+
+        fd.append('file', files)
+        fd.append('id', $("#id_b_e").val())
+        fd.append('kategori_id', $("#kategoriBarang_e").val())
+        fd.append('nama', $("#namaBarang_e").val())
+        fd.append('tipe', $("#tipeBarang_e").val())
+        fd.append('size', $("#sizeBarang_e").val())
+        fd.append('harga', $("#hargaBarang_e").val())
+        fd.append('stok', $("#stokBarang_e").val())
+
         $.ajax({
             url: URL + "api/barang/put" + "?token=" + token,
             type: "POST",
-            data: {
-                id: $('#id_b_e').val(),
-                nama: $('#namaBarang_e').val(),
-                size: $('#sizeBarang_e').val(),
-                tipe: $('#tipeBarang_e').val(),
-                harga: $('#hargaBarang_e').val(),
-                stok: $('#stokBarang_e').val(),
-                kategori_id: $('#kategoriBarang_e').val()
-            },
+            data: fd,
+            contentType: false,
+            processData: false,
             success: (e) => {
                 $("#ShowBarangModal").modal('hide')
                 $("#fBarangEdit").trigger("reset")
@@ -194,7 +206,7 @@ $(document).ready((e) => {
 
     // Form barang hapus
     $("#buttonDeleteBarang").click((e) => {
-        let id = $("#buttonDeleteBarang").data('id')
+        let id = $("#buttonDeleteBarang").attr('data-id')
 
         if(!confirm("Apakah anda yakin item ini di hapus?")) {
             return ;

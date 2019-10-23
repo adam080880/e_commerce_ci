@@ -52,13 +52,15 @@
         }
 
         public function delete($id) {
+            $item = $this->Barang_Model->find($id);            
+            unlink("./assets/img/item/" . $item[0]->image_url);
+
             $data = $this->Barang_Model->delete($id);
 
             echo json_encode($data); exit;
         }
 
-        public function post() {
-            
+        public function post() {              
             $this->form_validation->set_rules('nama', 'Name', 'required|trim');
             $this->form_validation->set_rules('tipe', 'Type', 'required|trim');
             $this->form_validation->set_rules('size', 'Size', 'required|trim');
@@ -83,18 +85,37 @@
                     'status' => false
                 ];
 
-            } else {
-                
+            } else {                                            
+
+                if(isset($_FILES['file'])) {
+                    $file = $_FILES['file'];
+                    $file_name = time().$file['name'];
+                } else {
+                    $file = false;
+                    $file_name = null;
+                }
+
                 $data = [
                     'nama' => $this->input->post('nama'),
                     'tipe' => $this->input->post('tipe'),
                     'size' => $this->input->post('size'),
                     'harga' => $this->input->post('harga'),
                     'stok' => $this->input->post('stok'),
-                    'kategori_id' => $this->input->post('kategori_id'),                    
+                    'kategori_id' => $this->input->post('kategori_id'),    
+                    'image_url' => $file_name                   
                 ];
 
-                $query = $this->Barang_Model->insert($data);
+                if($file) {
+                    if($file['size'] > 1000000 || ($file['type'] != 'image/jpeg' && $file['type'] != 'image/png')) {
+                        $query = false;
+                    } else {
+                        move_uploaded_file($file['tmp_name'], './assets/img/item/'.$file_name);
+                        $query = $this->Barang_Model->insert($data);
+                    }      
+                }      else {
+                    $query = false;
+                }    
+
                 if(!$query) {
                     $res = [
                         'data' => $data,
@@ -143,8 +164,8 @@
                     'status' => false
                 ];
 
-            } else {
-                
+            } else {                
+
                 $data = [
                     'id' => $this->input->post('id'),
                     'nama' => $this->input->post('nama'),
@@ -152,8 +173,32 @@
                     'size' => $this->input->post('size'),
                     'harga' => $this->input->post('harga'),
                     'stok' => $this->input->post('stok'),
-                    'kategori_id' => $this->input->post('kategori_id'),                    
-                ];
+                    'kategori_id' => $this->input->post('kategori_id'),                        
+                ];     
+                
+                if(isset($_FILES['file'])) {
+                    $file = $_FILES['file'];
+                    $file_name = time().$file['name'];                    
+
+                    if($file['size'] > 1000000 || ($file['type'] != 'image/jpeg' && $file['type'] != 'image/png')) {                        
+                        $query = false;
+                    } else {
+                        $nameDeleted = $this->Barang_Model->find($data['id'])[0]->image_url;
+                        unlink("./assets/img/item/" . $nameDeleted);
+                        move_uploaded_file($file['tmp_name'], './assets/img/item/'.$file_name);
+
+                        $data = [
+                            'id' => $this->input->post('id'),
+                            'nama' => $this->input->post('nama'),
+                            'tipe' => $this->input->post('tipe'),
+                            'size' => $this->input->post('size'),
+                            'harga' => $this->input->post('harga'),
+                            'stok' => $this->input->post('stok'),
+                            'kategori_id' => $this->input->post('kategori_id'),    
+                            'image_url' => $file_name
+                        ];    
+                    }  
+                }             
 
                 $query = $this->Barang_Model->update($data);
                 if(!$query) {

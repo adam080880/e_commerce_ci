@@ -31,7 +31,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="" method="post" id="fBarangTambah">
+            <form action="" method="post" id="fBarangTambah" enctype="multipart/form-data">
                 <div class="modal-body p-4">
                     <div class="form-group">
                         <input type="hidden" name="" id="id_b">
@@ -57,6 +57,10 @@
                     <div class="form-group">
                         <label for="stokBarang" class="label-control">Stok: </label>
                         <input type="number" name="stokBarang" id="stokBarang" class="form-control" min=0 step=10 />
+                    </div>
+
+                    <div class="form-group">
+                        <input type="file" name="img_" id="img_" class='form-control'>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -161,6 +165,11 @@
                         <select name="kategoriBarang_e" id="kategoriBarang_e" class="form-control">
 
                         </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="img" class="label-control">Gambar: </label>
+                        <input type="file" name="img" id="img" class='form-control'>
                     </div>
                 </div>
                 <div class="modal-footer">
