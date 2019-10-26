@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="<?= base_url() ?>assets/icon/css/all.css">
 
     <link rel="stylesheet" href="<?= base_url() ?>assets/my.css">
-    <link rel="stylesheet" href="<?= base_url() ?>assets/plugins/initScrolling.css">
+    <!-- <link rel="stylesheet" href="<?= base_url() ?>assets/plugins/initScrolling.css"> -->
         
 </head>
 

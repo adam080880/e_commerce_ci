@@ -139,3 +139,20 @@
         overflow-x:scroll;
     }
 }
+
+.on-ready-from-right-to-left-slide {
+    animation-name: on-ready-from-right-to-left-slide;
+    animation-duration: 1s;
+    position:relative;
+}
+
+@keyframes on-ready-from-right-to-left-slide {
+    0% {
+        position:relative;
+        opacity:0;        
+    }
+    100% {
+        opacity:1;        
+        position: relative;
+    }    
+}

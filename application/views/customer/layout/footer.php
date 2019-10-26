@@ -46,8 +46,7 @@
     <script type="module">
         import { CookiesManipulation } from "<?= base_url() ?>assets/plugins/CookiesManipulation.js";
         window.CookiesManipulation = new CookiesManipulation;
-    </script>
-    <script src="<?= base_url() ?>assets/plugins/grabScrolling.js"></script>
+    </script>    
     <script src="<?= base_url() ?>assets/jquery.min.js"></script>
     <script src="<?= base_url() ?>assets/popper.min.js"></script>
     <script src="<?= base_url() ?>assets/bootstrap/js/bootstrap.min.js"></script>

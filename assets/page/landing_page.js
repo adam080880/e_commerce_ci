@@ -13,7 +13,7 @@ $(document).ready(() => {
 
     let cookACookies = window.CookiesManipulation
 
-    __init_scrolling(document.getElementById("newest-item"))
+    // __init_scrolling(document.getElementById("newest-item"))
 
     getCartCookies($("#cartShow"), cookACookies)    
 

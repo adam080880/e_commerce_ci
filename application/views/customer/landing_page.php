@@ -72,12 +72,15 @@
                         <hr class='mb-0'>
                     </div>
                     <div class="card-body" style="border-radius:0">
-                        <div class="active-items-gs p-2 swh-1" style="white-space:nowrap;" id="newest-item">
+                        <div class="p-2 row" id="item">
                             <?php foreach($newest_list as $newest): ?>
-                                <div class="card col-sm-6 shadow-sm ml-1 mr-1" style="display:inline-block; white-space: nowrap">
-                                    <div class="card-body">
-                                        <b class="d-block"><a href="<?= base_url() ?>item/<?= $newest->id ?>" class="text-dark opwh-1"><?= $newest->nama ?></a></b>
-                                        <small class="d-block">Rp. <?= $newest->harga ?>, 00</small>                                        
+                                <div class="col-sm-3">
+                                    <div class="card shadow-sm">
+                                        <a href="<?= base_url() ?>item/<?= $newest->id ?>" class="text-dark opwh-1"><img src="<?= base_url() . "assets/img/item/" . $newest->image_url ?>" alt="" class="card-img-top"></a>
+                                        <div class="card-body">
+                                            <b class="d-block"><a href="<?= base_url() ?>item/<?= $newest->id ?>" class="text-dark opwh-1"><?= $newest->nama ?></a></b>
+                                            <small class="d-block">Rp. <?= $newest->harga ?>, 00</small>                                        
+                                        </div>
                                     </div>
                                 </div>
                             <?php endforeach; ?>

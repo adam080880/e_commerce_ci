@@ -4,11 +4,11 @@
 
 <div class="container mt-4">
     <div class="row">
-        <div class="col p-5">
-
+        <div class="col pt-5 pr-0">
+            <img src="<?= base_url() . "assets/img/item/" . $item->image_url ?>" width=100% height=auto alt="">
         </div>
-        <div class="col p-5">
-            <div class="card">
+        <div class="col p-5 pl-0">
+            <div class="card shadow-sm">
                 <div class="card-header bg-white">
                     <a href="<?= base_url() ?>category/<?= $item->kategori_id ?>"><< Lihat kategori ini..</a>
                 </div>
