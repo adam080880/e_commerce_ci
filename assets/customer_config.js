@@ -10,18 +10,7 @@ function refreshCartNavbar()
     })
 }
 
-$(window).on('scroll', (e) => {    
-    if($(document).scrollTop() >= $("#item").position().top+50) {        
-        $("#item").css('visibility', 'visible')
-        $("#item").addClass('on-ready-from-right-to-left-slide')
-    }
-})
-
 let laman = "http://" + window.location.hostname + "/e_commerce/"
-
-$(document).ready(() => {
-    $("#item").css('visibility', 'hidden')
-})
 
 if (window.location.pathname == "/e_commerce/login" || window.location.pathname == "/e_commerce/register") {
 

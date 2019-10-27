@@ -60,4 +60,22 @@
             return $this->db->update('users');
         }
 
+        public function alamatCreate($data) {
+            return $this->db->insert('alamat_profile', $data);
+        }
+
+        public function alamatUpdate($data, $id) {
+            foreach($data as $index => $dataToUpdate) {
+                $this->db->set($index, $dataToUpdate);
+            }
+
+            $this->db->where('id', $id);
+            return $this->db->update('alamat_profile');
+        }
+
+        public function alamatDelete($id) {
+            $this->db->where('id', $id);
+            return $this->db->delete('alamat_profile');
+        }
+
     }

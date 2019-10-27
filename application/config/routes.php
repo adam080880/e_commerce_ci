@@ -59,3 +59,4 @@ $route['register'] = 'welcome/register';
 
 $route['cart'] = 'welcome/cart';
 $route['item/(:num)'] = 'welcome/item/$1';
+$route['profile'] = 'welcome/profile';

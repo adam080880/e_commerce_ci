@@ -89,6 +89,21 @@ class Welcome extends CI_Controller {
 			]
 		]);
 	}
+
+	public function profile()
+	{
+		$this->load->view('customer/layout/navbar', [
+			'title' => 'Index',
+			'recent_navbar' => 'register',	
+			'cate' => $this->Kategori_Model->get()			
+		]);
+		$this->load->view('customer/profile');
+		$this->load->view('customer/layout/footer', [
+			'java' => [
+				base_url() . 'assets/page/profile_customer.js'
+			]
+		]);
+	}
 	
 	public function item($i)
 	{

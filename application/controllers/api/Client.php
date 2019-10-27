@@ -134,5 +134,150 @@
             echo json_encode($json);exit;
         }
 
+        public function province()
+        {
+            $curl = curl_init();
+
+            curl_setopt_array($curl, array(
+            CURLOPT_URL => "https://api.rajaongkir.com/starter/province",
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 30,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+            CURLOPT_HTTPHEADER => array(
+                "key: 1a29bdb21a8c7173ee70da9d11b7fae1"
+            ),
+            ));
+
+            $response = curl_exec($curl);
+            $err = curl_error($curl);
+
+            curl_close($curl);
+
+            if ($err) {
+            echo json_encode("cURL Error #:" . $err);
+            } else {
+            echo $response;
+            }
+        }
+
+        public function city($province_id)
+        {            
+
+            $curl = curl_init();
+
+            curl_setopt_array($curl, array(
+            CURLOPT_URL => "https://api.rajaongkir.com/starter/city?province=$province_id",
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 30,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+            CURLOPT_HTTPHEADER => array(
+                "key: 1a29bdb21a8c7173ee70da9d11b7fae1"
+            ),
+            ));
+
+            $response = curl_exec($curl);
+            $err = curl_error($curl);
+
+            curl_close($curl);
+
+            if ($err) {
+            echo "cURL Error #:" . $err;
+            } else {
+            echo $response;
+            }
+        }
+
+        public function city_id($city_id)
+        {
+            $curl = curl_init();
+
+            curl_setopt_array($curl, array(
+            CURLOPT_URL => "https://api.rajaongkir.com/starter/city?id=$city_id",
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 30,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+            CURLOPT_HTTPHEADER => array(
+                "key: 1a29bdb21a8c7173ee70da9d11b7fae1"
+            ),
+            ));
+
+            $response = curl_exec($curl);
+            $err = curl_error($curl);
+
+            curl_close($curl);
+
+            if ($err) {
+            echo "cURL Error #:" . $err;
+            } else {
+            echo $response;
+            }
+        }
+        
+        public function addProfile()
+        {
+            $user_id = $this->user_data->id;
+
+            echo json_encode( $this->Users_Model->alamatCreate([
+                'user_id' => $user_id,
+                'alamat' => $this->input->post('alamat'),
+                'provinsi' => $this->input->post('provinsi'),
+                'kota_kab' => $this->input->post('kota_kab'),
+                'kecamatan' => $this->input->post('kecamatan'),
+                'kelurahan' => $this->input->post('kelurahan'),
+                'kode_pos' => $this->input->post('kode_pos'),
+                'province_ro_id' => $this->input->post('province_ro_id'),
+                'kabupaten_or_id' => $this->input->post('kabupaten_or_id'),
+                'nama' => $this->input->post('nama')
+            ]) );
+
+        }
+
+        public function alamat()
+        {
+            $user_id = $this->user_data->id;
+
+            $this->db->where('user_id', $user_id);
+            echo json_encode($this->db->get('alamat_profile')->result());exit;
+        }
+
+        public function alamat_id($id)
+        {
+            $user_id = $this->user_data->id;
+            $this->db->where('user_id', $user_id);
+            $this->db->where('id', $id);
+            echo json_encode($this->db->get('alamat_profile')->result()[0]);exit;
+        }
+
+        public function editProfile()
+        {            
+            echo json_encode($this->Users_Model->alamatUpdate([
+                'alamat' => $this->input->post('alamat'),
+                'provinsi' => $this->input->post('provinsi'),
+                'kota_kab' => $this->input->post('kota_kab'),
+                'kecamatan' => $this->input->post('kecamatan'),
+                'kelurahan' => $this->input->post('kelurahan'),
+                'kode_pos' => $this->input->post('kode_pos'),
+                'province_ro_id' => $this->input->post('province_ro_id'),
+                'kabupaten_or_id' => $this->input->post('kabupaten_or_id'),
+                'nama' => $this->input->post('nama')
+            ], $this->input->post('id')));exit;
+
+        }
+
+        public function deleteAlamat($id)
+        {
+            $this->db->where('id', $id);
+            $this->db->where('user_id', $this->user_data->id);
+            echo json_encode($this->db->delete('alamat_profile'));exit;
+        }
     }
 ?>
