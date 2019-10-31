@@ -36,8 +36,48 @@ function getCart(table)
     })
 }
 
+function checkout(data)
+{
+    $.ajax({
+        url: laman + "api/client/checkout?token=" + window.localStorage.getItem('token'),
+        type: "POST",
+        data: data,
+        success: (e) => {
+            if(e.status) {
+                document.location.href=laman+'transaksi/'+e.data.id
+            } else {
+                document.location.href=laman+'cart'
+            }
+        }
+    })
+}
+
+function getAlamat()
+{
+    let no = 1;
+    $("#alamat").html("")
+    $.ajax({
+        url: laman + "api/client/alamat?token="+window.localStorage.getItem('token'),
+        type: "GET",
+        success: (e) => {
+            $.each(e, (index, item) => {
+                $("#alamat").append(`<option value='${item.id}'>${item.nama}</option>`)
+            })
+        }
+    })
+}
+
 $(document).ready(() => {
 
     getCart($("#table-cart"))
+    getAlamat()
+
+    $("#checkoutBtn").submit((e) => {
+        e.preventDefault()
+        checkout({
+            token: $("#promoToken").val(),
+            alamat: $("#alamat").val()
+        })
+    })
 
 })

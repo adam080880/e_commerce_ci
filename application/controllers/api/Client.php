@@ -279,5 +279,101 @@
             $this->db->where('user_id', $this->user_data->id);
             echo json_encode($this->db->delete('alamat_profile'));exit;
         }
+
+        public function randStr(int $range)
+        {
+            $huruf = "1234567890abcdefghijklmnopqrstuvwxyz";
+            $res = "";
+
+            for($a = 0; $a < $range; $a++)
+            {
+                $res .= $huruf[random_int(0, (strlen($huruf)-1))];
+            }
+
+            return $res;
+        }
+
+        public function checkout()
+        {
+            $user_id = $this->user_data->id;
+            $token = $this->input->post('token');
+            $alamat_id = $this->input->post('alamat');
+            $total_harga = 0;
+            
+            $this->db->where('user_id', $user_id);
+            $data = $this->db->get('cart')->result();
+
+            $now = date('Y-m-d');   
+
+            $this->db->insert('pengiriman', [
+                'no_resi' => $this->randStr(5).time(),
+                'kirim' => $now,
+                'terima' => date('Y-m-d', strtotime('+7 days', strtotime($now))),
+                'biaya' => 10000,
+                'alamat_id' => $alamat_id
+            ]);
+
+            $pengiriman_id = $this->db->insert_id();
+
+            if($this->db->insert('transaksi', [
+                'user_id' => $user_id,
+                'status' => 'unverified',
+                'total' => 0,
+                'pengiriman_id' => $pengiriman_id
+            ])) {
+                $id = $this->db->insert_id();
+
+                foreach($data as $item) {
+
+                    $this->db->where('id', $item->barang_id);
+                    $total_harga += $this->db->get('barang')->result()[0]->harga;
+
+                    $this->db->insert('detail_transaksi', [
+                        'transaksi_id' => $id,
+                        'barang_id' => $item->barang_id,
+                        'amount' => $item->total,                        
+                    ]);                    
+                }
+
+                $this->db->where('user_id', $user_id);
+                $this->db->delete('cart');      
+                
+                if(!$token || empty($token)) {
+                    $diskon = 0;
+                } else {
+                    $this->db->where('token', $token);
+                    $token_ = $this->db->get('promo')->result();
+
+                    if(count($token_) > 0) {
+                        if($now < $token_[0]->expired_date) {
+                            $diskon = $token_[0]->diskon;
+                        } else {
+                            $diskon = 0;
+                        }
+                    } else {
+                       $diskon  = 0;
+                    }
+                }
+
+                $total_harga = $total_harga - ($total_harga * $diskon);
+
+                $this->db->where('id', $id);
+                $this->db->update('transaksi', [
+                    'total' => $total_harga
+                ]);
+             
+                echo json_encode([
+                    'status' => true,
+                    'data' => [
+                        'id' => $id
+                    ]
+                ]); exit;
+            }
+
+            echo json_encode([
+                'status' => false,
+                'data' => []
+            ]); exit;
+        }
     }
 ?>
