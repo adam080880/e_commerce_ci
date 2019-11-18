@@ -16,7 +16,34 @@
 
         public function getHistories($user_id)
         {
-            return $this->db->get_where('transaksi', ['user_id', $user_id])->result();
+            $this->db->where('user_id', $user_id);
+            $this->db->limit(5);
+            $this->db->order_by('id', 'desc');
+            return $this->db->get('transaksi')->result();
+        }
+
+        public function getHistoriesAll($user_id)
+        {
+            $this->db->where('user_id', $user_id);            
+            return $this->db->get('transaksi')->result();
+        }
+
+        public function getHistoriesAllResi($user_id)
+        {
+            $this->db->where('user_id', $user_id);            
+            return $this->db->get('transaksi_resi')->result();
+        }
+
+        public function find($id)
+        {
+            $this->db->where('id', $id);
+            return $this->db->get('transaksi_resi')->row_array();
+        }
+
+        public function findTransaksi($id)
+        {
+            $this->db->where('transaksi_id', $id);
+            return $this->db->get('barang_transaksi')->result();
         }
 
         public function getTransaction($cond = "default")

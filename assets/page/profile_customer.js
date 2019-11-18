@@ -20,6 +20,21 @@ function __init_propinsi() {
     })
 }
 
+function getRiwayatTransaksi()
+{
+    $("#riwayat-transaksi").html("");
+    $.ajax({
+        url: laman + "api/client/transaksi?token="+window.localStorage.getItem('token'),
+        type: "GET",
+        success: (e) => {
+            let no = 0
+            $.each(e, (index, value) => {
+                $("#riwayat-transaksi").append(`<tr><td>${++no}</td><td>${value.created_at}</td><td><a href='${laman+'transaksi/'+value.id}' class='btn btn-primary'>More..</a></td></tr>`)
+            })
+        }
+    })
+}
+
 function getAlamat()
 {
     let no = 1;
@@ -29,7 +44,7 @@ function getAlamat()
         type: "GET",
         success: (e) => {
             $.each(e, (index, item) => {
-                $("#alamat_f").append(`<tr><td>${no++}</td><td>${item.nama}</td><td>${item.alamat}</td><td><button class='btn btn-primary btn-sm' onclick='showAlamat(${item.id})'><span class='fa fa-info'></span> info</button></td></tr>`)
+                $("#alamat_f").append(`<tr><td>${no++}</td><td>${item.nama}</td><td>${item.alamat}</td><td class='text-center'><button class='btn btn-primary btn-sm' onclick='showAlamat(${item.id})' title='info'><span class='fa fa-info'></span></button></td></tr>`)
             })
         }
     })
@@ -120,8 +135,7 @@ $(".city").change((e) => {
 })
 
 $("#form-profile").submit((e) => {
-    e.preventDefault()
-
+    e.preventDefault()    
     $.ajax({
         url: laman + "api/client/addProfile?token="+window.localStorage.getItem('token'),
         type: "POST",
@@ -186,5 +200,6 @@ $(document).ready(() => {
 
     __init_propinsi();    
     getAlamat()
+    getRiwayatTransaksi()
 
 })

@@ -47,7 +47,7 @@
 
                                     </tbody>
                                 </table>
-                                <a href="<?= base_url() ?>transaksi">Lebih lengkap..</a>
+                                <a href="<?= base_url() ?>transaksis">Lebih lengkap..</a>
                             </div>
                         </div>
 
@@ -60,7 +60,7 @@
                                             <div class="div" style="width: 10%; border-bottom:2px solid black"></div>
                                         </div>
                                         <div class="col-6 text-right">
-                                            <button class="btn btn-success" onclick="$('#modalAlamat').modal('show')"><span class="fa fa-plus"></span> Alamat</button>
+                                            <button class="btn btn-success" onclick="$('#modalAlamat').modal('show')" title="Tambah Alamat"><span class="fa fa-plus"></span></button>
                                         </div>
                                     </div>
                                 </div>                                                                                        
@@ -87,7 +87,7 @@
     </div>
 
     <div class="modal fade" id="modalAlamat">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5>Tambah Alamat</h5>
@@ -145,7 +145,7 @@
     </div>
 
     <div class="modal fade" id="modalAlamat_e">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5>Tambah Alamat</h5>

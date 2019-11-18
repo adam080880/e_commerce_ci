@@ -10,23 +10,26 @@
                         <b>Item Top</b> 
                         <hr>
                     </div>
-                    <div class="card-body" style="height:250px">
+                    <div class="card-body" style="height:300px">
                         <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
                             <div class="carousel-inner" id="item_top">
                                 <?php $counter__ = 0; foreach($top_list as $top): ?>                                    
                                     <div class="carousel-item <?= $counter__ == 0 ? "active" : "" ?>">
                                         <div class="container">
-                                            <b class="d-block"><?= $top->nama ?></b>
-                                            <small class="d-block">Rp. <?= $top->harga ?>, 00</small>
+                                                <img src="<?= base_url() . "assets/img/item/" . $top->image_url ?>" alt="" width="50%" class="card-img-top">
+                                                <div class="p-3 mb-3">
+                                                    <b class="d-block"><?= $top->nama ?></b>
+                                                    <small class="d-block">Rp. <?= $top->harga ?>, 00</small>
+                                                </div>
                                         </div>
                                     </div>
                                 <?php $counter__++; endforeach; ?>
                             </div>
-                            <a class="carousel-control-prev bg-dark" href="#carouselExampleIndicators2" role="button" data-slide="prev">
+                            <a class="carousel-control-prev" href="#carouselExampleIndicators2" role="button" data-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                 <span class="sr-only">Previous</span>
                             </a>
-                            <a class="carousel-control-next bg-dark" href="#carouselExampleIndicators2" role="button" data-slide="next">
+                            <a class="carousel-control-next" href="#carouselExampleIndicators2" role="button" data-slide="next">
                                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                 <span class="sr-only">Next</span>
                             </a>
@@ -43,13 +46,13 @@
                     </ol>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="<?= "http://" . $_SERVER['HTTP_HOST'] . "/e_commerce/" ?>assets/img/test.jpg" class="d-block w-100" height=300 alt="">
+                            <img src="<?= "http://" . $_SERVER['HTTP_HOST'] . "/e_commerce/" ?>assets/img/test.jpg" class="d-block w-100" height=350 alt="">
                         </div>
                         <div class="carousel-item">
-                            <img src="<?= "http://" . $_SERVER['HTTP_HOST'] . "/e_commerce/" ?>assets/img/test.jpg" class="d-block w-100" height=300 alt="">
+                            <img src="<?= "http://" . $_SERVER['HTTP_HOST'] . "/e_commerce/" ?>assets/img/test.jpg" class="d-block w-100" height=350 alt="">
                         </div>
                         <div class="carousel-item">
-                            <img src="<?= "http://" . $_SERVER['HTTP_HOST'] . "/e_commerce/" ?>assets/img/test.jpg" class="d-block w-100" height=300 alt="">
+                            <img src="<?= "http://" . $_SERVER['HTTP_HOST'] . "/e_commerce/" ?>assets/img/test.jpg" class="d-block w-100" height=350 alt="">
                         </div>
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -72,16 +75,18 @@
                         <hr class='mb-0'>
                     </div>
                     <div class="card-body" style="border-radius:0">
-                        <div class="p-2 row" id="item">
+                        <div class="p-2 row justify-content-center">
                             <?php foreach($newest_list as $newest): ?>
                                 <div class="col-sm-3">
-                                    <div class="card shadow-sm">
-                                        <a href="<?= base_url() ?>item/<?= $newest->id ?>" class="text-dark opwh-1"><img src="<?= base_url() . "assets/img/item/" . $newest->image_url ?>" alt="" class="card-img-top"></a>
-                                        <div class="card-body">
-                                            <b class="d-block"><a href="<?= base_url() ?>item/<?= $newest->id ?>" class="text-dark opwh-1"><?= $newest->nama ?></a></b>
-                                            <small class="d-block">Rp. <?= $newest->harga ?>, 00</small>                                        
+                                    <a href="<?= base_url() ?>item/<?= $newest->id ?>" class="text-dark opwh-1 not-u">
+                                        <div class="card shadow-sm">
+                                            <img src="<?= base_url() . "assets/img/item/" . $newest->image_url ?>" alt="" class="card-img-top">
+                                            <div class="card-body">
+                                                <b class="d-block not-u-text"><?= $newest->nama ?></b>
+                                                <small class="d-block">Rp. <?= $newest->harga ?>, 00</small>                                        
+                                            </div>
                                         </div>
-                                    </div>
+                                    </a>
                                 </div>
                             <?php endforeach; ?>
                         </div>

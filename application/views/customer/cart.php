@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col p-5">
                 <div class="card m-auto p-3">
-                    <a href="<?= base_url() ?>" class="mb-3"> << Belanja lagi</a>
+                    <a href="<?= base_url() ?>" class="mb-3"> < Belanja lagi</a>
                     <table class="table table-hover table-bordered">
                         <thead class='thead text-center'>
                             <tr>

@@ -25,6 +25,7 @@ class Welcome extends CI_Controller {
 
 		$this->load->model('Kategori_Model');
 		$this->load->model('Barang_Model');
+		$this->load->model('Transaksi_Model');
 	}
 
 	public function index()
@@ -118,6 +119,45 @@ class Welcome extends CI_Controller {
 		$this->load->view('customer/layout/footer', [
 			'java' => [
 				base_url() . 'assets/page/item.js'
+			]
+		]);
+	}
+
+	public function transaksi($id)
+	{
+		$this->load->view('customer/layout/navbar', [
+			'title' => 'Index',
+			'recent_navbar' => 'item',	
+			'cate' => $this->Kategori_Model->get()			
+		]);		
+
+		// var_dump($this->Transaksi_Model->find($id));
+
+		$this->load->view('customer/transaksi', [
+			'item' => $this->Transaksi_Model->find($id),
+			'barang' => $this->Transaksi_Model->findTransaksi($id)
+		]);
+		$this->load->view('customer/layout/footer', [
+			'java' => [
+				base_url() . 'assets/page/transaksi_customer.js'
+			]
+		]);
+	}
+
+	public function transaksis()
+	{
+		$this->load->view('customer/layout/navbar', [
+			'title' => 'Index',
+			'recent_navbar' => 'item',	
+			'cate' => $this->Kategori_Model->get()			
+		]);		
+
+		// var_dump($this->Transaksi_Model->find($id));
+
+		$this->load->view('customer/transaksiAll', []);
+		$this->load->view('customer/layout/footer', [
+			'java' => [
+				base_url() . 'assets/page/transaksiAll_customer.js'
 			]
 		]);
 	}

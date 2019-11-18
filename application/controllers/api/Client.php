@@ -34,6 +34,7 @@
             }
 
             $this->load->model('Cart_Model');
+            $this->load->model('Transaksi_Model');
         }
 
         public function getCart()
@@ -326,7 +327,8 @@
                 foreach($data as $item) {
 
                     $this->db->where('id', $item->barang_id);
-                    $total_harga += $this->db->get('barang')->result()[0]->harga;
+                    $barang__ = $this->db->get('barang')->result()[0];
+                    $total_harga += ($barang__->harga * $item->total);
 
                     $this->db->insert('detail_transaksi', [
                         'transaksi_id' => $id,
@@ -374,6 +376,25 @@
                 'status' => false,
                 'data' => []
             ]); exit;
+        }
+
+        public function transaksi()
+        {
+            $id = $this->user_data->id;
+
+            echo json_encode($this->Transaksi_Model->getHistories($id));exit;
+        }
+
+        public function transaksiAll()
+        {
+            $id = $this->user_data->id;
+
+            echo json_encode($this->Transaksi_Model->getHistoriesAllResi($id));exit;
+        }
+
+        public function valid_transaksi($id)
+        {
+            echo json_encode($this->Transaksi_Model->find($id)['user_id'] == $this->user_data->id); exit;
         }
     }
 ?>

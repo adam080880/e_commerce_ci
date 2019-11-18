@@ -9,19 +9,18 @@ function getCartCookies(param, cookies)
     }
 }
 
-$(window).on('scroll', (e) => {    
-    if($(document).scrollTop() >= $("#item").position().top+50) {        
-        $("#item").css('visibility', 'visible')
-        $("#item").addClass('on-ready-from-right-to-left-slide')
-    }
-})
+// $(window).on('scroll', (e) => {    
+//     if($(document).scrollTop() >= $("#item").position().top+10) {        
+//         $("#item").css('visibility', 'visible')
+//         $("#item").addClass('on-ready-from-right-to-left-slide')
+//     }
+// })
 
 $(document).ready(() => {
 
     let cookACookies = window.CookiesManipulation
 
     // __init_scrolling(document.getElementById("newest-item"))
-    $("#item").css('visibility', 'hidden')
     getCartCookies($("#cartShow"), cookACookies)    
 
 })

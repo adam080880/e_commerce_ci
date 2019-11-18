@@ -60,3 +60,5 @@ $route['register'] = 'welcome/register';
 $route['cart'] = 'welcome/cart';
 $route['item/(:num)'] = 'welcome/item/$1';
 $route['profile'] = 'welcome/profile';
+$route['transaksi/(:num)'] = 'welcome/transaksi/$1';
+$route['transaksis'] = 'welcome/transaksis';
