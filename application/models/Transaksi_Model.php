@@ -44,7 +44,7 @@
         {
             $this->db->where('transaksi_id', $id);
             return $this->db->get('barang_transaksi')->result();
-        }
+        }        
 
         public function getTransaction($cond = "default")
         {
@@ -58,9 +58,14 @@
 
             }
 
-            $data = $data->get('transaksi');
+            $data = $data->get('transaksi_resi');
 
             return $data->result();
+        }
+
+        public function transaksi__()
+        {
+            return $this->db->order_by('created_at', 'desc')->get('transaksi_resi')->result();            
         }
 
         public function delete($id) {

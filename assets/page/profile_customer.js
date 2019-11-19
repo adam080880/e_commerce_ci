@@ -99,6 +99,19 @@ function deleteAlamat(_id) {
     })
 }
 
+function initUser()
+{
+    $.ajax({
+        url: laman + "api/client/me?token=" + window.localStorage.getItem('token'),
+        type: "GET",
+        success: (e) => {
+            $("#email").html(e.email)
+            $("#username").html(e.username)
+            $("#role").html(e.role);
+        }
+    })
+}
+
 $(".province").change((e) => {            
     propinsi_current = $(".province")[0].selectedOptions[0].dataset.value
     propinsi_current_id = $(".province").val()
@@ -201,5 +214,6 @@ $(document).ready(() => {
     __init_propinsi();    
     getAlamat()
     getRiwayatTransaksi()
+    initUser()
 
 })

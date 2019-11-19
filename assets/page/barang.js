@@ -10,7 +10,7 @@ function get_barang(_id_kategori) {
 
             let data = e;
             data.forEach((item, index) => {
-                _id_kategori.append("<div class='col-4'><div class='card shadow-sm item' onclick='showBarang("+item.id+")'><img class='card-img-top' style='width:100%; height:200px;' src='"+URL+"assets/img/item/"+item.image_url+"'/><div class='card-footer bg-white'><span class='text-secondary-sidebar d-block'>" + item.nama + "</span><small class='small sidebar-group-p'>Rp. " + item.harga + "</small></div></div></div>")
+                _id_kategori.append("<div class='col-3'><div class='card shadow-sm item' onclick='showBarang("+item.id+")'><img class='card-img-top' style='width:100%; height:200px;' src='"+URL+"assets/img/item/"+item.image_url+"'/><div class='card-footer bg-white'><span class='text-secondary-sidebar d-block'>" + item.nama + "</span><small class='small sidebar-group-p'>Rp. " + item.harga + "</small></div></div></div>")
             })
 
             __init_scrolling(document.querySelector("#kategori" + _id_kategori.attr('data-t')))

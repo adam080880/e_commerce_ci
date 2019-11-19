@@ -14,9 +14,11 @@ function init_table()
                 if(item.role != 'admin') {
                     verified = 'd-none'
                     btnV = ''
-                }
 
-                $("#tampil").append("<tr class=''><td>"+(++no)+"</td><td>"+(item.username)+"</td><td>"+(item.email)+"</td><td>"+(item.role)+"</td><td class='text-center'><button class='btn btn-sm "+verified+"' onclick='checkVerified("+item.id+")'><span class='"+btnV+" fa-sm'></span></button></td></tr>")
+                    $("#tampil").append("<tr class=''><td>"+(++no)+"</td><td>"+(item.username)+"</td><td>"+(item.email)+"</td><td>"+(item.role)+"</td><td class='text-center'><a class='btn btn-primary btn-sm' href='"+URL + "transaksi/user/" + item.id +"'><span class='fas fa-clock fa-sm'></span></a></td></tr>")
+                } else if(item.role == 'admin') {
+                    $("#tampil").append("<tr class=''><td>"+(++no)+"</td><td>"+(item.username)+"</td><td>"+(item.email)+"</td><td>"+(item.role)+"</td><td class='text-center'><button class='btn btn-sm "+verified+"' onclick='checkVerified("+item.id+")'><span class='"+btnV+" fa-sm'></span></button></td></tr>")
+                }                
             })
         }
     })

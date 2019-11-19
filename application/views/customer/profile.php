@@ -15,15 +15,15 @@
                                     <p>
                                         <div class="form-group">
                                             <label for="" class="label-control">Email:</label>
-                                            <b id="email" class='form-control'>adam@gmail.com</b>
+                                            <b id="email" class='form-control'>email</b>
                                         </div>
                                         <div class="form-group">
                                             <label for="" class="label-control">Username:</label>
-                                            <span id="username" class='form-control'>adamdaam</span>
+                                            <span id="username" class='form-control'>username</span>
                                         </div>
                                         <div class="form-group">
                                             <label for="" class="label-control">Role:</label>
-                                            <span id="role" class='form-control'>Customer</span>
+                                            <span id="role" class='form-control'>role</span>
                                         </div>
 
                                     </p>

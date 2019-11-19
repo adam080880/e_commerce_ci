@@ -70,7 +70,11 @@
                     <?php if($item['status'] == 'unverified') { ?>
                         <div class='alert alert-danger'>Barang belum terkirim</div>
                     <?php } else if($item['status'] == 'verified') { ?>
-                        <div class='alert alert-success'>Barang sudah terkirim <button class=' ml-3 btn btn-sm'>Sudah sampai? <b> Click Me </b></button></div>
+                        <div class='alert alert-success row ml-0 mr-0'>
+                            <div class="col"> Barang sudah terkirim </div>
+                            <div class="col text-right">
+                                <button class='ml-3 btn btn-sm' id="confirm" data-id="<?= $item['id'] ?>">Sudah sampai? <b> Click Me </b></button></div>
+                            </div>
                     <?php } else { ?>
                         <div class="alert alert-success">Barang sudah sampai di tempat anda, terima kasih telah berbelanja di sini :)</div>
                     <?php } ?>

@@ -74,6 +74,12 @@ $(document).ready(() => {
 
     $("#checkoutBtn").submit((e) => {
         e.preventDefault()
+
+        if(!$("#alamat").val()) {
+            alert("Harus tambah alamat dulu")
+            return ;
+        }
+
         checkout({
             token: $("#promoToken").val(),
             alamat: $("#alamat").val()

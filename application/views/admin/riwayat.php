@@ -15,7 +15,7 @@
                 <tr>
                     <th width="5%">No.</th>
                     <th width="35%">User Pembeli</th>
-                    <th width="20%">Alamat</th>
+                    <th width="20%">No Resi</th>
                     <th width="20%">Tanggal Pesan</th>                    
                     <th width="10%">Status</th>
                 </tr>

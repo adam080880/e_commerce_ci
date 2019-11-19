@@ -396,5 +396,33 @@
         {
             echo json_encode($this->Transaksi_Model->find($id)['user_id'] == $this->user_data->id); exit;
         }
+
+        public function me()
+        {
+            echo json_encode([
+                'username' => $this->user_data->username,
+                'email' => $this->user_data->email,
+                'role' => $this->user_data->role,
+            ]);exit;
+        }
+
+        public function confirm($id)
+        {
+            $transaksi_id = $id;
+
+            $transaksi = $this->Transaksi_Model->find($transaksi_id);    
+            // var_dump($transaksi);exit;
+            if($transaksi['user_id'] != $this->user_data->id) {
+                echo json_encode(false);exit;
+            }
+
+            $this->db->set('status', 'sampai');
+            $this->db->where('id', $transaksi_id);
+            if($this->db->update('transaksi')) {
+                echo json_encode(true);exit;
+            } else {
+                echo json_encode(false);exit;
+            }
+        }
     }
 ?>
